@@ -8,14 +8,31 @@ services:
     ports:
       - '25565:25565'
     volumes:
-      - 'Vanilla (Inner Circle):/root/config'
+      - 'inner_circle:/root/config'
+    cap_add:
+      - SYS_NICE
 
   bois:
     build: .
     image: thelostlambda/blocky-craft:latest
     container_name: bois_mc
     ports:
-      - '25565:25566'
+      - '25566:25565'
     volumes:
-      - 'Vanilla Bois:/root/config'
-      
+      - 'bois:/root/config'
+    cap_add:
+      - SYS_NICE
+
+volumes:
+  inner_circle:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: '/home/tll/ServerDirs/Minecraft/Vanilla Circle/'
+  bois:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: '/home/tll/ServerDirs/Minecraft/Vanilla Bois/'
