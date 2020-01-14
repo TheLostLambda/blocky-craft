@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+
+  inner_circle:
+    build: .
+    image: thelostlambda/blocky-craft:latest
+    container_name: inner_circle_mc
+    ports:
+      - '25565:25565'
+    volumes:
+      - 'Vanilla (Inner Circle):/root/config'
+
+  bois:
+    build: .
+    image: thelostlambda/blocky-craft:latest
+    container_name: bois_mc
+    ports:
+      - '25565:25566'
+    volumes:
+      - 'Vanilla Bois:/root/config'
+      
