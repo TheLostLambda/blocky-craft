@@ -22,7 +22,7 @@ RUN apk update && apk add openjdk11-jre-headless libgcc
 
 WORKDIR /root/
 # Pull the Minecraft 1.15.1 Server JAR
-RUN wget https://launcher.mojang.com/v1/objects/4d1826eebac84847c71a77f9349cc22afd0cf0a1/server.jar
+RUN wget https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
 
 # Pull in the Blocky binary
 COPY --from=blocky-build /root/blocky/target/release/blocky .
