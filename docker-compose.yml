@@ -5,6 +5,7 @@ services:
     build: .
     image: thelostlambda/blocky-craft:latest
     container_name: inner_circle_mc
+    restart: on-failure
     ports:
       - '25565:25565'
     volumes:
@@ -16,6 +17,7 @@ services:
     build: .
     image: thelostlambda/blocky-craft:latest
     container_name: bois_mc
+    restart: on-failure
     ports:
       - '25566:25565'
     volumes:
@@ -27,6 +29,7 @@ services:
     build: .
     image: thelostlambda/blocky-craft:latest
     container_name: idiots_mc
+    restart: on-failure
     ports:
       - '25567:25565'
     volumes:
