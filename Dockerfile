@@ -21,8 +21,8 @@ FROM alpine:latest
 RUN apk update && apk add openjdk11-jre-headless libgcc
 
 WORKDIR /root/
-# Pull the Minecraft 1.15.1 Server JAR
-RUN wget https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
+# Pull the Minecraft 1.16 Server JAR
+RUN wget https://launcher.mojang.com/v1/objects/7361a24df069a06748844cc7483c35d4abd2d80c/server.jar
 
 # Pull in the Blocky binary
 COPY --from=blocky-build /root/blocky/target/release/blocky .
