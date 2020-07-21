@@ -11,7 +11,7 @@ services:
     volumes:
       - 'inner_circle:/root/config'
     cap_add:
-      - SYS_NICE
+      - ALL
 
   bois:
     build: .
@@ -23,7 +23,7 @@ services:
     volumes:
       - 'bois:/root/config'
     cap_add:
-      - SYS_NICE
+      - ALL
 
   idiots:
     build: .
@@ -35,7 +35,7 @@ services:
     volumes:
       - 'idiots:/root/config'
     cap_add:
-      - SYS_NICE
+      - ALL
 
 volumes:
 
