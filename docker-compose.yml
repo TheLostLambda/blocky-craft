@@ -18,5 +18,3 @@ services:
     network_mode: host
     volumes:
       - ~/.ssh:/home/forward/.ssh:ro
-    cap_add:
-      - ALL
