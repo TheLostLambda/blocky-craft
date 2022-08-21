@@ -1,61 +1,22 @@
-version: '3.7'
 services:
-
-  inner_circle:
-    build: .
-    image: thelostlambda/blocky-craft:latest
-    container_name: inner_circle_mc
+  igem_mc:
+    build: minecraft
+    image: thelostlambda/minecraft:latest
+    container_name: igem_mc
     restart: on-failure
-    ports:
-      - '25565:25565'
+    network_mode: host
     volumes:
-      - 'inner_circle:/root/config'
+      - ~/Minecraft/iGEM:/root/config
     cap_add:
       - ALL
 
-  bois:
-    build: .
-    image: thelostlambda/blocky-craft:latest
-    container_name: bois_mc
+  squidgate:
+    build: squidgate
+    image: thelostlambda/squidgate:latest
+    container_name: squidgate
     restart: on-failure
-    ports:
-      - '25566:25565'
+    network_mode: host
     volumes:
-      - 'bois:/root/config'
+      - ~/.ssh:/home/forward/.ssh:ro
     cap_add:
       - ALL
-
-  idiots:
-    build: .
-    image: thelostlambda/blocky-craft:latest
-    container_name: idiots_mc
-    restart: on-failure
-    ports:
-      - '25567:25565'
-    volumes:
-      - 'idiots:/root/config'
-    cap_add:
-      - ALL
-
-volumes:
-
-  inner_circle:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: '/home/tll/ServerDirs/Minecraft/Vanilla Circle/'
-
-  bois:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: '/home/tll/ServerDirs/Minecraft/Vanilla Bois/'
-
-  idiots:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: '/home/tll/ServerDirs/Minecraft/Vanilla Idiots/'
