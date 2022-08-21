@@ -10,7 +10,7 @@ do
   while true
   do
     echo "Forwarding ${LOCAL_PORTS[$I]} to $SERVER:${REMOTE_PORTS[$I]}..."
-    ssh -ttR ${REMOTE_PORTS[$I]}:localhost:${LOCAL_PORTS[$I]} $SERVER -o ExitOnForwardFailure=yes
+    ssh -ttR ${REMOTE_PORTS[$I]}:127.0.0.1:${LOCAL_PORTS[$I]} $SERVER -o ExitOnForwardFailure=yes
     sleep 1
   done &
   SSH_PIDS+=($!)
